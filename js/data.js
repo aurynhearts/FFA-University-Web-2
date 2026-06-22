@@ -147,11 +147,6 @@
       "weight_max": 1.5
     },
     {
-      "tag": "gunsmith cats",
-      "weight_min": 0.5,
-      "weight_max": 1.5
-    },
-    {
       "tag": "digimon adventure 02",
       "weight_min": 0.5,
       "weight_max": 1.5
