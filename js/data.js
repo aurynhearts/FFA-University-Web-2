@@ -3611,6 +3611,12 @@
         "priority": 100
       }
     ],
+    "Flat Chest": [
+      {
+        "text": "flat chest",
+        "priority": 100
+      }
+    ],
     "Penis": [
       {
         "text": "penis",
