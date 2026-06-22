@@ -5,7 +5,6 @@
    * Data definitions for Fantasy University Character Generator.
    * Converted from data.py. Tag objects preserve the Python shape: { text, priority }.
    *
-   * Safety note: minor-coded NSFW options from the original data are not exported.
    */
 
   const QUALITY_TAGS = [
