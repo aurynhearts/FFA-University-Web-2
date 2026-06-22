@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fantasy University Character Generator</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <header class="top-bar">
+      <h1>Fantasy University Character Generator</h1>
+      <div class="top-actions">
+        <button id="generate-button" class="button button-generate" type="button">⚄ Generate</button>
+        <button id="save-button" class="button" type="button">💾 Save Output As TXT</button>
+        <button id="nsfw-button" class="button" type="button">🔞 NSFW Options</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="panel generation-controls" aria-labelledby="generation-controls-title">
+        <h2 id="generation-controls-title">Generation Controls</h2>
+        <div class="control-row">
+          <label class="field">
+            <span>Character Count</span>
+            <select id="character-count-select"></select>
+          </label>
+
+          <label class="field field-wide">
+            <span>Background</span>
+            <select id="background-select"></select>
+          </label>
+        </div>
+      </section>
+
+      <section class="panel character-options" aria-labelledby="character-options-title">
+        <h2 id="character-options-title">Character Options <small>(Random = roll each generation)</small></h2>
+        <div id="character-lock-container" class="character-lock-container"></div>
+      </section>
+
+      <section class="output-grid" aria-label="Generated output">
+        <div id="sheet-container" class="output-column"></div>
+        <div id="base-prompt-container" class="output-column"></div>
+        <div id="character-prompt-container" class="output-column"></div>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="nsfw-modal" class="modal">
+    <form id="nsfw-form" method="dialog">
+      <header class="modal-header">
+        <h2>NSFW Settings</h2>
+        <button id="nsfw-close-button" class="button button-small" type="button">✕</button>
+      </header>
+
+      <div id="nsfw-modal-content" class="modal-content"></div>
+
+      <footer class="modal-footer">
+        <button id="nsfw-save-button" class="button button-generate" type="button">Save</button>
+        <button id="nsfw-cancel-button" class="button" type="button">Cancel</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <script src="js/data.js"></script>
+  <script src="js/generator.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

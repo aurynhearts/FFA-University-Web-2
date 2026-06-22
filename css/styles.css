@@ -1,0 +1,261 @@
+:root {
+  --bg: #1a1430;
+  --panel: #241b45;
+  --panel-2: #2d2354;
+  --text: #f0e8ff;
+  --muted: #c7b8eb;
+  --pink: #ff4fa3;
+  --pink-hover: #ff71b7;
+  --violet: #7d5cff;
+  --violet-hover: #9a7cff;
+  --border: #4a3a80;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --mono: Consolas, "Courier New", monospace;
+  --sans: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 960px;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 8px;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 8px 6px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: var(--text);
+}
+
+h2 {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+  color: var(--pink);
+}
+
+h2 small {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.top-actions,
+.control-row,
+.button-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.panel {
+  margin: 8px 0;
+  padding: 8px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.field {
+  display: grid;
+  gap: 4px;
+  min-width: 180px;
+}
+
+.field-wide {
+  min-width: 280px;
+}
+
+label span,
+.legend-label {
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+select,
+textarea,
+input[type="text"] {
+  width: 100%;
+  color: var(--text);
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 8px;
+  font: inherit;
+}
+
+textarea {
+  min-height: 260px;
+  resize: vertical;
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.button {
+  border: 0;
+  border-radius: 6px;
+  padding: 7px 10px;
+  color: white;
+  background: var(--violet);
+  cursor: pointer;
+  font: inherit;
+}
+
+.button:hover {
+  background: var(--violet-hover);
+}
+
+.button-generate,
+.button-clear {
+  background: var(--pink);
+  font-weight: 700;
+}
+
+.button-generate:hover,
+.button-clear:hover {
+  background: var(--pink-hover);
+}
+
+.button-small {
+  padding: 4px 8px;
+}
+
+.character-lock-container {
+  display: grid;
+  gap: 8px;
+}
+
+.character-lock-row {
+  padding: 8px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.lock-grid {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(100px, 1fr));
+  gap: 6px;
+}
+
+.output-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+  gap: 8px;
+  min-height: 320px;
+}
+
+.output-column {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+
+.output-panel {
+  display: grid;
+  gap: 6px;
+  padding: 8px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.modal {
+  width: min(1200px, calc(100vw - 40px));
+  max-height: min(750px, calc(100vh - 40px));
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
+}
+
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.modal-header,
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.modal-footer {
+  justify-content: flex-start;
+  border-top: 1px solid var(--border);
+  border-bottom: 0;
+}
+
+.modal-content {
+  max-height: 610px;
+  overflow: auto;
+  padding: 10px;
+}
+
+.nsfw-section {
+  margin-bottom: 10px;
+  padding: 10px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.radio-grid,
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 4px 12px;
+  margin-top: 6px;
+}
+
+.checkbox-grid {
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+}
+
+.inline-option {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text);
+}
+
+.nsfw-outfit-field {
+  max-width: 320px;
+  margin-bottom: 10px;
+}
+
+.muted-note {
+  grid-column: 1 / -1;
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.modal form {
+  margin: 0;
+}
